@@ -1,0 +1,40 @@
+﻿@model playground.Models.Task
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insertion</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        h4 {
+            text-align: center;
+            font-size: 250%;
+            position: relative;
+            background: #b30000;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Deletion</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="Deletion" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="name">Insert title:</label>
+                    <input class="form-control" asp-for="name" />
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

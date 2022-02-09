@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 250%;
+            position: relative;
+            background: #b30000;
+        }
+
+        p {
+            text-align: center;
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h1>This is a task manager!</h1>
+        <p><a asp-action="LogIn">Log in!</a></p>
+        <p><a asp-action="SignUp">Don't have an account? Sign up!</a></p>
+        <p>Created by Dmitriy Vysotskyy</p>
+    </div>
+</body>
+</html>

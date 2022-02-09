@@ -1,0 +1,62 @@
+﻿@model IEnumerable<playground.Models.Task>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Responses</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 250%;
+            position: relative;
+            background: #b30000;
+        }
+        p {
+            text-align: center;
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <h2>All you tasks </h2>
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Start date</th>
+                <th>Finish date</th>
+                <th>Priority</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (playground.Models.Task r in Model)
+            {
+                <tr>
+                    <td>@r.name</td>
+                    <td>@r.desc</td>
+                    <td>@r.start_date</td>
+                    <td>@r.deadline</td>
+                    <td>@r.prior</td>
+                    <td>
+                        <form id="@r.name" asp-action="Deletion" method="post">
+                            <input type="hidden" asp-for="@r.name" />
+                                 <button type="submit"
+                                        class="btn btn-success btn-sm pull-right">
+                                    Delete
+                                </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><a asp-action="Insertion">Click here if you want to insert!</a></p>
+</body>
+</html>
