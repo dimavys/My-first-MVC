@@ -86,7 +86,7 @@ namespace playground.Controllers
             if (ModelState.IsValid)
             {
                 var tmp = ListUsers.users.Find(x => x.nickname == key);
-                tmp.tasks.Add(t);
+                tmp.AddTask(t);
                 return View("~/Views/Home/AddingData/Added.cshtml", t);
             }
             else
@@ -103,28 +103,33 @@ namespace playground.Controllers
         }
 
         
-
-
-        //[HttpGet]
-        //public ViewResult Deletion()
-        //{
-        //    return View();
-        //}
-
-        public ViewResult Deletion(Models.Task t)
+        public ViewResult Deletion(int id)
         {
             var tmp = ListUsers.users.Find(x => x.nickname == key);
-            tmp.Destroy(t.name);
-            return View("~Views/Home/DeletingData/Deleted.cshtml",t);
+            var name = tmp.Finder(id);
+            string nm = name.name;
+            tmp.Destroy(id);
+            var task = new Models.Task
+            {
+                name = nm
+            };
+            return View("~/Views/Home/DeletingData/Deleted.cshtml",task);
         }
 
-        //[HttpGet]
-        //public ViewResult Edition()
-        //{
-        //    return View();
-        //}
+        public ViewResult Edition1 (int id)
+        {
+            var tmp = ListUsers.users.Find(x => x.nickname == key);
+            var task = tmp.Finder(id);
+            return View("~/Views/Home/EditingData/Edition.cshtml", task);
+        }
 
-
+        public ViewResult Edition2 (Models.Task t)
+        {
+            var tmp = ListUsers.users.Find(x => x.nickname == key);
+            var task = tmp.Finder(t.id);
+            tmp.FillUp(t, task);
+            return View("~/Views/Home/ListAdded");
+        }
 
     }
 }

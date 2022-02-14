@@ -10,6 +10,7 @@
     <None Remove="Views\Home\LogIn\" />
     <None Remove="Views\Home\SignUp\" />
     <None Remove="Views\Images\" />
+    <None Remove="Views\Home\EditingData\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Home\AddingData\" />
@@ -17,5 +18,6 @@
     <Folder Include="Views\Home\LogIn\" />
     <Folder Include="Views\Home\SignUp\" />
     <Folder Include="Views\Images\" />
+    <Folder Include="Views\Home\EditingData\" />
   </ItemGroup>
 </Project>

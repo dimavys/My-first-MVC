@@ -1,8 +1,7 @@
-﻿@model playground.Models.Repository
+﻿@model playground.Models.Task
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,19 +25,31 @@
     <div class="panel panel-success">
         <div class="panel-heading text-center"><h4>Insert data</h4></div>
         <center>
-            <form class="p-a-1" asp-action="LogIn" method="post">
+            <form class="p-a-1" asp-action="Edition2" method="post">
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
-                    <label asp-for="nickname">Insert nickname:</label>
-                    <input class="form-control" asp-for="nickname" />
+                    <label asp-for="name">Insert title:</label>
+                    <input class="form-control" asp-for="@Model.name" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="password">Insert password:</label>
-                    <input type="password" class="form-control" asp-for="password" />
+                    <label asp-for="desc">Insert description:</label>
+                    <input class="form-control" asp-for="@Model.desc" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="start_date">Choose start date:</label>
+                    <input class="form-control" asp-for="@Model.start_date" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="deadline">Choose deadline:</label>
+                    <input class="form-control" asp-for="@Model.deadline" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="prior">Insert priority:</label>
+                    <input class="form-control" asp-for="@Model.prior" />
                 </div>
                 <div class="text-center">
                     <button class="btn btn-primary" type="submit">
-                        Log In
+                        Submit
                     </button>
                 </div>
             </form>

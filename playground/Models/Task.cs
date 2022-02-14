@@ -19,5 +19,7 @@ namespace playground.Models
 
         [Required(ErrorMessage = "Please enter priority")]
         public int prior { get; set; }
+
+        public int id { get; set; }
     }
 }

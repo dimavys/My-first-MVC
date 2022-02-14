@@ -23,7 +23,7 @@
 </head>
 <body>
     <h1>Task Manager</h1>
-    <h2>All you tasks </h2>
+    <h2>All your tasks </h2>
     <table class="table table-sm table-striped table-bordered">
         <thead>
             <tr>
@@ -38,22 +38,27 @@
         <tbody>
             @foreach (playground.Models.Task r in Model)
             {
-                <tr>
-                    <td>@r.name</td>
-                    <td>@r.desc</td>
-                    <td>@r.start_date</td>
-                    <td>@r.deadline</td>
-                    <td>@r.prior</td>
-                    <td>
-                        <form id="@r.name" asp-action="Deletion" method="post">
-                            <input type="hidden" asp-for="@r.name" />
-                                 <button type="submit"
-                                        class="btn btn-success btn-sm pull-right">
-                                    Delete
-                                </button>
-                        </form>
-                    </td>
-                </tr>
+            <tr>
+                <td>@r.name</td>
+                <td>@r.desc</td>
+                <td>@r.start_date</td>
+                <td>@r.deadline</td>
+                <td>@r.prior</td>
+                <td>
+                    <form id="@r.id" asp-action="Deletion" method="post">
+                        <input type="hidden" name="id" value="@r.id" />
+                        <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
+                            Delete
+                        </button>
+                    </form>
+                    <form id="@r.id" asp-action="Edition1" method="post">
+                        <input type="hidden" name="id" value="@r.id" />
+                        <button class="btn btn-primary btn-sm pull-right" style="float:right" type="submit">
+                            Edit
+                        </button>
+                    </form>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

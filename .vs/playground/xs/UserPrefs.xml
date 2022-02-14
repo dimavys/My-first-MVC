@@ -1,36 +1,31 @@
 ﻿<Properties StartupConfiguration="{A28D281C-A081-4117-8ABB-FE904EB4ACEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="playground/Views/Home/LogIn/NoUser.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="playground/Controllers/HomeController.cs">
     <Files>
-      <File FileName="playground/Controllers/HomeController.cs" Line="91" Column="14" />
-      <File FileName="playground/Views/Home/LogIn/NoUser.cshtml" Line="29" Column="31" />
+      <File FileName="playground/Controllers/HomeController.cs" Line="136" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="playground" expanded="True">
             <Node name="playground" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True">
                   <Node name="AddingData" expanded="True" />
                   <Node name="DeletingData" expanded="True" />
-                  <Node name="LogIn" expanded="True">
-                    <Node name="NoUser.cshtml" selected="True" />
-                  </Node>
+                  <Node name="EditingData" expanded="True" />
+                  <Node name="LogIn" expanded="True" />
                   <Node name="SignUp" expanded="True" />
                 </Node>
-                <Node name="Images" expanded="True" />
+                <Node name="Shared" expanded="True" />
               </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>key</Value>
         </State>
       </Pad>
     </Pads>
@@ -39,7 +34,9 @@
   <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mac/Desktop/projects/neew/playground/Controllers/HomeController.cs" relfile="playground/Controllers/HomeController.cs" line="129" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

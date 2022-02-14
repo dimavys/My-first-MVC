@@ -7,7 +7,9 @@ namespace playground.Models
 {
     public class Repository //user
     {
-        public List<Task> tasks = new List<Task>();
+        private static int counter = 1;
+
+        private List<Task> tasks = new List<Task>();
 
         [Required(ErrorMessage = "Please enter your nickname")]
         public string nickname { get; set; }
@@ -25,11 +27,27 @@ namespace playground.Models
         public void AddTask(Task t)
         {
             tasks.Add(t);
+            t.id = counter;
+            counter++;
         }
 
-        public void Destroy(string str)
+        public void Destroy(int id)
         {
-            tasks.RemoveAt(tasks.IndexOf(tasks.Find(x => x.name == str)));
+            tasks.RemoveAt(tasks.IndexOf(tasks.Find(x => x.id == id)));
+        }
+
+        public Task Finder (int id)
+        {
+            return tasks.Find(x => x.id == id);
+        }
+
+        public void FillUp(Task t1, Task t2)
+        {
+            t2.name = t1.name;
+            t2.desc = t1.desc;
+            t2.deadline = t1.deadline;
+            t2.start_date = t1.start_date;
+            t2.prior = t1.prior;
         }
 
     }
