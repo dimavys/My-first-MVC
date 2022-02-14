@@ -1,8 +1,5 @@
 ﻿<Properties StartupConfiguration="{A28D281C-A081-4117-8ABB-FE904EB4ACEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="playground/Controllers/HomeController.cs">
-    <Files>
-      <File FileName="playground/Controllers/HomeController.cs" Line="136" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -34,9 +31,7 @@
   <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/mac/Desktop/projects/neew/playground/Controllers/HomeController.cs" relfile="playground/Controllers/HomeController.cs" line="129" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
