@@ -128,7 +128,7 @@ namespace playground.Controllers
             var tmp = ListUsers.users.Find(x => x.nickname == key);
             var task = tmp.Finder(t.id);
             tmp.FillUp(t, task);
-            return View("~/Views/Home/ListAdded");
+            return View("~/Views/Home/ListAdded.cshtml",tmp.Tasks);
         }
 
     }

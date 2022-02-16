@@ -134,5 +134,4 @@
 /Users/mac/Desktop/projects/neew/playground/obj/Debug/netcoreapp3.1/Razor/Views/Home/SignUp/SignedUp.cshtml.g.cs
 /Users/mac/Desktop/projects/neew/playground/obj/Debug/netcoreapp3.1/Razor/Views/Home/SignUp/Wrong.cshtml.g.cs
 /Users/mac/Desktop/projects/neew/playground/obj/Debug/netcoreapp3.1/Razor/Views/Home/LogIn/NoUser.cshtml.g.cs
-/Users/mac/Desktop/projects/neew/playground/obj/Debug/netcoreapp3.1/Razor/Views/Home/EditingData/Edited.cshtml.g.cs
 /Users/mac/Desktop/projects/neew/playground/obj/Debug/netcoreapp3.1/Razor/Views/Home/EditingData/Edition.cshtml.g.cs

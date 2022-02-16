@@ -20,6 +20,18 @@
         form {
             width: 50%;
         }
+        p1 {
+            font-size: 150%;
+        }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background: #b30000;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +42,7 @@
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
                     <label asp-for="nickname">Insert nickname:</label>
-                    <input class="form-control" asp-for="nickname"/>
+                    <input class="form-control" asp-for="nickname" />
                 </div>
                 <div class="form-group">
                     <label asp-for="password">Insert password:</label>
@@ -44,6 +56,9 @@
             </form>
         </center>
     </div>
+    <footer>
+        <p1>All rights and lefts reserved</p1>
+    </footer>
 </body>
 </html>
 

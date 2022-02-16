@@ -19,6 +19,18 @@
             text-align: center;
             font-size: 200%;
         }
+        p1 {
+            font-size: 150%;
+        }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background: #b30000;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -38,30 +50,33 @@
         <tbody>
             @foreach (playground.Models.Task r in Model)
             {
-            <tr>
-                <td>@r.name</td>
-                <td>@r.desc</td>
-                <td>@r.start_date</td>
-                <td>@r.deadline</td>
-                <td>@r.prior</td>
-                <td>
-                    <form id="@r.id" asp-action="Deletion" method="post">
-                        <input type="hidden" name="id" value="@r.id" />
-                        <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
-                            Delete
-                        </button>
-                    </form>
-                    <form id="@r.id" asp-action="Edition1" method="post">
-                        <input type="hidden" name="id" value="@r.id" />
-                        <button class="btn btn-primary btn-sm pull-right" style="float:right" type="submit">
-                            Edit
-                        </button>
-                    </form>
-                </td>
-            </tr>
+                <tr>
+                    <td width="15%">@r.name</td>
+                    <td width="35%">@r.desc</td>
+                    <td width="15%">@r.start_date</td>
+                    <td width="15%">@r.deadline</td>
+                    <td width="12%">@r.prior</td>
+                    <td width="8%"> 
+                        <form id="@r.id" asp-action="Deletion" method="post">
+                            <input type="hidden" name="id" value="@r.id" />
+                            <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                        <form id="@r.id" asp-action="Edition1" method="post">
+                            <input type="hidden" name="id" value="@r.id" />
+                            <button class="btn btn-primary btn-sm pull-right" style="float:right" type="submit">
+                                Edit
+                            </button>
+                        </form>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
     <p><a asp-action="Insertion">Click here if you want to insert!</a></p>
+    <footer>
+        <p1>All rights and lefts reserved</p1>
+    </footer>
 </body>
 </html>
