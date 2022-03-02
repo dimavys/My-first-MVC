@@ -1,0 +1,48 @@
+﻿<Properties StartupConfiguration="{15B87437-26F6-4702-BA8D-805CC510E734}|Default">
+  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Controllers/HomeController.cs" Line="28" Column="10" />
+      <File FileName="Controllers/ModifyController.cs" Line="33" Column="32" />
+      <File FileName="Views/Home/EditingData/Edition.cshtml" Line="43" Column="41" />
+      <File FileName="Views/Home/DeletingData/Deleted.cshtml" Line="46" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="playground" expanded="True">
+            <Node name="playground" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="AddingData" expanded="True" />
+                  <Node name="DeletingData" expanded="True" />
+                  <Node name="EditingData" expanded="True" />
+                  <Node name="LogIn" expanded="True" />
+                  <Node name="SignUp" expanded="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
