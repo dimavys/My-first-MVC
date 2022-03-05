@@ -12,40 +12,45 @@ namespace playground.Controllers
 {
 	public class ModifyController : Controller
 	{
-        public static string key = AuthenticationController.key;
+        public static int RepKey = DataController.RepKey;
+
+        private AppDbContext appDbContext;
+
+        public ModifyController(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
 
         [HttpPost]
         [Route("Modify/Deletion")]
         public ViewResult Deletion(int id)
         {
-            var tmp = ListUsers.UserFinder(key);
-            var name = tmp.Finder(id);
-            string nm = name.name;
-            tmp.Destroy(id);
-            var task = new Models.Task
-            {
-                name = nm
-            };
-            return View("~/Views/Home/DeletingData/Deleted.cshtml", task);
+            var tmp = appDbContext.Tasks.Where(x => x.Id == id).FirstOrDefault();
+            appDbContext.Tasks.Remove(tmp);
+            appDbContext.SaveChanges();
+            return View("~/Views/Home/DeletingData/Deleted.cshtml");
         }
 
         [HttpGet]
-        [Route("Modify/Edition`")]
+        [Route("Modify/Edition")]
         public ViewResult Edition(int id)
         {
-            var tmp = ListUsers.UserFinder(key);
-            var task = tmp.Finder(id);
-            return View("~/Views/Home/EditingData/Edition.cshtml", task);
+            var tmp = appDbContext.Tasks.Where(x => x.Id == id).FirstOrDefault();
+            return View("~/Views/Home/EditingData/Edition.cshtml", tmp);
         }
 
         [HttpPost]
         [Route("Modify/Edited")]
         public ViewResult Edited(Models.Task t)
         {
-            var tmp = ListUsers.UserFinder(key);
-            var task = tmp.Finder(t.id);
-            tmp.FillUp(t, task);
-            return View("~/Views/Home/ListAdded.cshtml", tmp.Tasks);
+            var tmp = appDbContext.Tasks.Where(x => x.Id == t.Id).FirstOrDefault();
+            tmp.Name = t.Name;
+            tmp.Desc = t.Desc;
+            tmp.Deadline = t.Deadline;
+            tmp.StartDate = t.StartDate;
+            tmp.Prior = t.Prior;
+            appDbContext.SaveChanges();
+            return View("~/Views/Home/EditingData/Edited.cshtml");
         }
     }
 }

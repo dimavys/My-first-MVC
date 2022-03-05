@@ -1,6 +1,4 @@
-﻿@model playground.Models.User
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -26,6 +24,7 @@
             text-align: center;
             font-size: 200%;
         }
+
         p1 {
             font-size: 150%;
         }
@@ -42,10 +41,11 @@
 </head>
 <body>
     <h1>Task manager</h1>
-    <h2>Welcome, @Model.Nickname!</h2>
-    <p><a asp-controller="Repository" asp-action="ListRepository">See your repositories</a></p>
+    <h2>Task has been edited!</h2>
+    <p><a asp-controller="Data" asp-action="ListAdded">See your table of tasks</a></p>
     <footer>
         <p1>All rights and lefts reserved</p1>
     </footer>
 </body>
 </html>
+

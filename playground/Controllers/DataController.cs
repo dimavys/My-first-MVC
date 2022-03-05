@@ -10,9 +10,18 @@ using playground.Models;
 
 namespace playground.Controllers
 {
-	public class DataController : Controller
-	{
-        public static string key = AuthenticationController.key;
+    public class DataController : Controller
+    {
+        private AppDbContext appDbContext;
+
+        public DataController(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
+
+        public static int RepKey;
+
+        
 
         [HttpGet]
         public ViewResult Insertion()
@@ -26,8 +35,9 @@ namespace playground.Controllers
         {
             if (ModelState.IsValid)
             {
-                var tmp = ListUsers.UserFinder(key);
-                tmp.AddTask(t);
+                t.RepositoryId = RepKey;
+                appDbContext.Tasks.Add(t);
+                appDbContext.SaveChanges();
                 return View("~/Views/Home/AddingData/Added.cshtml", t);
             }
             else
@@ -41,9 +51,31 @@ namespace playground.Controllers
         [Route("Data/ListAdded")]
         public ViewResult ListAdded()
         {
-            var tmp = ListUsers.UserFinder(key);
-            return View("~/Views/Home/ListAdded.cshtml", tmp.Tasks);
+            var check = appDbContext.Tasks.Where(x => x.RepositoryId == RepKey && x.Id >= 1).FirstOrDefault();
+            if (check != null)
+            {
+                var tmp = appDbContext.Tasks.Where(x => x.RepositoryId == RepKey).ToList();  
+                return View("~/Views/Home/ListAdded.cshtml", tmp); // value cannot be null
+            }
+            else
+                return View("~/Views/Home/AddingData/Insertion.cshtml");
         }
-    }
-}
 
+
+        [HttpGet]
+        [Route("Data/Transfer")]
+        public ViewResult Transfer(int id)
+        {
+            RepKey = id;
+            var check = appDbContext.Tasks.Where(x => x.RepositoryId == id && x.Id >= 1).FirstOrDefault();
+            if (check != null)
+            {
+                return View("~/Views/Home/AddingData/ToList.cshtml"); 
+            }
+            else
+                return View("~/Views/Home/MyView.cshtml");
+        }
+
+    }
+
+}

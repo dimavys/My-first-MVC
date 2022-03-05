@@ -17,10 +17,16 @@
             background: #b30000;
         }
 
+        h2 {
+            text-align: center;
+            position: relative;
+        }
+
         p {
             text-align: center;
             font-size: 200%;
         }
+
         p1 {
             font-size: 150%;
         }
@@ -38,8 +44,8 @@
 <body>
     <div class="text-center">
         <h1>This is a task manager!</h1>
-        <h2> Ooops, @Model.Nickname user already exists</h2>
-        <p><a asp-controller="Authentication" asp-action="LogIn">Log in right now!</a></p>
+        <h2> @Model.Nickname, start managing your tasks right now</h2>
+        <p><a asp-controller="Repository" asp-action="Insertion">Create your first repository!</a></p>
     </div>
     <footer>
         <p1>All rights and lefts reserved</p1>

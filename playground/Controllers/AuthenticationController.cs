@@ -12,7 +12,14 @@ namespace playground.Controllers
 {
 	public class AuthenticationController : Controller
 	{
-        public static string key;
+        private AppDbContext appDbContext;
+
+        public AuthenticationController(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
+
+        public static int UserKey;
 
         [HttpGet]
         public ViewResult SignUp()
@@ -21,18 +28,20 @@ namespace playground.Controllers
         }
 
         [HttpPost]
-        public ViewResult SignUp(Repository r)
+        public ViewResult SignUp(User r)
         {
             if (ModelState.IsValid)
             {
-                if (ListUsers.UserFinder(r.nickname) != null)
+                var tmp = appDbContext.Users.Where(x => x.Nickname == r.Nickname).FirstOrDefault();
+                if (tmp != null)
                 {
                     return View("~/Views/Home/SignUp/Wrong.cshtml", r);
                 }
                 else
                 {
-                    ListUsers.AddUser(r);
-                    key = r.nickname;
+                    appDbContext.Users.Add(r);
+                    appDbContext.SaveChanges();
+                    UserKey = r.Id;
                     return View("~/Views/Home/SignUp/SignedUp.cshtml", r);
                 }
             }
@@ -50,14 +59,14 @@ namespace playground.Controllers
         }
 
         [HttpPost]
-        public ViewResult LogIn(Repository r)
+        public ViewResult LogIn(User r)
         {
             if (ModelState.IsValid)
             {
-                var tmp = ListUsers.UserFinder(r.nickname);
-                if (tmp != null && tmp.password == r.password)
+                var tmp = appDbContext.Users.Where(x => x.Nickname == r.Nickname).FirstOrDefault();
+                if (tmp != null && tmp.Password == r.Password)
                 {
-                    key = tmp.nickname;
+                    UserKey = tmp.Id;
                     return View("Views/Home/Login/LoggedIn.cshtml", r);
                 }
                 else

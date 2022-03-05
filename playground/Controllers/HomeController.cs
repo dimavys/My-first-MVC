@@ -14,16 +14,15 @@ namespace playground.Controllers
     {
         public static string key;
        
-        //private AppDbContext appDbContext;
+        private AppDbContext appDbContext;
 
-        //public HomeController(AppDbContext appDbContext)
-        //{
-        //    this.appDbContext = appDbContext;
-        //}
+        public HomeController(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
 
         public ViewResult Index()
         {
-            //appDbContext.Tasks.Add
             return View("StartPage");
         }
     }

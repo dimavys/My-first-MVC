@@ -38,27 +38,27 @@
         <div class="panel-heading text-center"><h4>Insert data</h4></div>
         <center>
             <form class="p-a-1" asp-controller="Modify" asp-action="Edited" method="post">
-                <input hidden asp-for="@Model.id" />
+                <input hidden asp-for="@Model.Id" />
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
-                    <label asp-for="name">Insert title:</label>
-                    <input class="form-control" asp-for="@Model.name" />
+                    <label asp-for="Name">Insert title:</label>
+                    <input class="form-control" asp-for="@Model.Name" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="desc">Insert description:</label>
-                    <input class="form-control" asp-for="@Model.desc" />
+                    <label asp-for="Desc">Insert description:</label>
+                    <input class="form-control" asp-for="@Model.Desc" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="start_date">Choose start date:</label>
-                    <input class="form-control" asp-for="@Model.start_date" />
+                    <label asp-for="StartDate">Choose start date:</label>
+                    <input class="form-control" asp-for="@Model.StartDate" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="deadline">Choose deadline:</label>
-                    <input class="form-control" asp-for="@Model.deadline" />
+                    <label asp-for="Deadline">Choose deadline:</label>
+                    <input class="form-control" asp-for="@Model.Deadline" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="prior">Insert priority:</label>
-                    <input class="form-control" asp-for="@Model.prior" />
+                    <label asp-for="Prior">Insert priority:</label>
+                    <input class="form-control" asp-for="@Model.Prior" />
                 </div>
                 <div class="text-center">
                     <button class="btn btn-primary" type="submit">

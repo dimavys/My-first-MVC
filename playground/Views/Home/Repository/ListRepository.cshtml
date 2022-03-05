@@ -1,0 +1,84 @@
+﻿@model IEnumerable<playground.Models.Repository>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Responses</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 250%;
+            position: relative;
+            background: #b30000;
+        }
+
+        p {
+            text-align: center;
+            font-size: 200%;
+        }
+
+        p1 {
+            font-size: 150%;
+        }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background: #b30000;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <h2>All your Repositories </h2>
+    <table align="center" style="width:50%" class=" table table-sm table-striped table-bordered" >
+        <thead>
+            <tr>
+                <th width="76%">Name</th>
+                <th width="24%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (playground.Models.Repository r in Model)
+            {
+                <tr>
+                    <td width="76%">@r.Name</td>
+                    <td width="24%">
+                        <form id="@r.Id" asp-controller="Repository" asp-action="Deletion" method="post">
+                            <input type="hidden" name="id" value="@r.Id" />
+                            <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
+                                Delete
+                            </button>
+                        </form>
+                        <form id="@r.Id" asp-controller="Repository" asp-action="Edition" method="post">
+                            <input type="hidden" name="id" value="@r.Id" />
+                            <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
+                                Edit
+                            </button>
+                        </form>
+                        <form id="@r.Id" asp-controller="Data" asp-action="Transfer" method="get">
+                            <input type="hidden" name="id" value="@r.Id" />
+                            <button class="btn btn-primary btn-sm" style="float:right" type="submit">
+                                Enter
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><a asp-controller="Repository" asp-action="Insertion">Click here if you want to insert!</a></p>
+    <footer>
+        <p1>All rights and lefts reserved</p1>
+    </footer>
+</body>
+</html>

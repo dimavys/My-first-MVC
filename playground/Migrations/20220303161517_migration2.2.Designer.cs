@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using playground.Data;
 
@@ -10,9 +11,10 @@ using playground.Data;
 namespace playground.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220303161517_migration2.2")]
+    partial class migration22
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,67 +23,64 @@ namespace playground.Migrations
 
             modelBuilder.Entity("playground.Models.Repository", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("UserId")
+                    b.Property<int?>("Userid")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<string>("name")
+                        .HasColumnType("longtext");
 
-                    b.HasIndex("UserId");
+                    b.HasKey("id");
+
+                    b.HasIndex("Userid");
 
                     b.ToTable("Repositories");
                 });
 
             modelBuilder.Entity("playground.Models.Task", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Deadline")
+                    b.Property<DateTime>("deadline")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Desc")
+                    b.Property<string>("desc")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Prior")
+                    b.Property<int>("prior")
                         .HasColumnType("int");
 
-                    b.Property<int>("RepositoryId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime>("start_date")
                         .HasColumnType("datetime(6)");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("playground.Models.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Nickname")
+                    b.Property<string>("nickname")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("password")
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Users");
                 });
@@ -90,9 +89,7 @@ namespace playground.Migrations
                 {
                     b.HasOne("playground.Models.User", null)
                         .WithMany("Repositories")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Userid");
                 });
 
             modelBuilder.Entity("playground.Models.User", b =>

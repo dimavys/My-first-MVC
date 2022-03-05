@@ -6,20 +6,22 @@ namespace playground.Models
     public class Task
     {
         [Required(ErrorMessage = "Please enter the task title")]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Required(ErrorMessage = "Please enter description")]
-        public string desc { get; set; }
+        public string Desc { get; set; }
 
         [Required(ErrorMessage = "Please enter start date")]
-        public DateTime deadline { get; set; }
+        public DateTime Deadline { get; set; }
 
         [Required(ErrorMessage = "Please enter finish date")]
-        public DateTime start_date { get; set; }
+        public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "Please enter priority")]
-        public int prior { get; set; }
+        public int Prior { get; set; }
 
-        public int id { get; set; }
+        public int Id { get; set; }
+
+        public int RepositoryId { get; set; }
     }
 }

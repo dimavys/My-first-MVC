@@ -7,6 +7,10 @@ namespace playground.Data
 	{
         public DbSet<Task> Tasks { get; set; }
 
+        public DbSet<Repository> Repositories { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 

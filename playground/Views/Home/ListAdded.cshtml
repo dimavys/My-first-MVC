@@ -51,20 +51,20 @@
             @foreach (playground.Models.Task r in Model)
             {
                 <tr>
-                    <td width="15%">@r.name</td>
-                    <td width="35%">@r.desc</td>
-                    <td width="15%">@r.start_date</td>
-                    <td width="15%">@r.deadline</td>
-                    <td width="12%">@r.prior</td>
-                    <td width="8%"> 
-                        <form id="@r.id" asp-controller="Modify" asp-action="Deletion" method="post">
-                            <input type="hidden" name="id" value="@r.id" />
+                    <td width="15%">@r.Name</td>
+                    <td width="35%">@r.Desc</td>
+                    <td width="15%">@r.StartDate</td>
+                    <td width="15%">@r.Deadline</td>
+                    <td width="12%">@r.Prior</td>
+                    <td width="8%">
+                        <form id="@r.Id" asp-controller="Modify" asp-action="Deletion" method="post">
+                            <input type="hidden" name="id" value="@r.Id" />
                             <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
                                 Delete
                             </button>
                         </form>
-                        <form id="@r.id" asp-controller="Modify" asp-action="Edition" method="get">
-                            <input type="hidden" name="id" value="@r.id" />
+                        <form id="@r.Id" asp-controller="Modify" asp-action="Edition" method="get">
+                            <input type="hidden" name="id" value="@r.Id" />
                             <button class="btn btn-primary btn-sm pull-right" style="float:right" type="submit">
                                 Edit
                             </button>
@@ -75,6 +75,7 @@
         </tbody>
     </table>
     <p><a asp-controller="Data" asp-action="Insertion">Click here if you want to insert!</a></p>
+    <p><a asp-controller="Repository" asp-action="ListRepository">Go back to repositories!</a></p>
     <footer>
         <p1>All rights and lefts reserved</p1>
     </footer>

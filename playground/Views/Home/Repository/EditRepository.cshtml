@@ -1,8 +1,7 @@
-﻿@model playground.Models.User
+﻿@model playground.Models.Repository
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +16,11 @@
             position: relative;
             background: #b30000;
         }
+
         form {
             width: 50%;
         }
+
         p1 {
             font-size: 150%;
         }
@@ -38,19 +39,16 @@
     <div class="panel panel-success">
         <div class="panel-heading text-center"><h4>Insert data</h4></div>
         <center>
-            <form class="p-a-1" asp-controller="Authentication" asp-action="SignUp" method="post">
+            <form class="p-a-1" asp-controller="Repository" asp-action="Edited" method="post">
+                <input hidden asp-for="@Model.Id" />
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
-                    <label asp-for="Nickname">Insert nickname:</label>
-                    <input class="form-control" asp-for="Nickname" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password">Insert password:</label>
-                    <input type="password" class="form-control" asp-for="Password" />
+                    <label asp-for="Name">Insert title:</label>
+                    <input class="form-control" asp-for="@Model.Name" />
                 </div>
                 <div class="text-center">
                     <button class="btn btn-primary" type="submit">
-                        Sign Up
+                        Submit
                     </button>
                 </div>
             </form>

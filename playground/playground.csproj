@@ -14,6 +14,7 @@
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />
     <None Remove="Data\" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Views\Home\Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Home\AddingData\" />
@@ -30,5 +31,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <Folder Include="Views\Home\Repository\" />
   </ItemGroup>
 </Project>
