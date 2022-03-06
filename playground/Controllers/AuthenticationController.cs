@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using playground.Data;
 using playground.Models;
 
 namespace playground.Controllers
-{
-	public class AuthenticationController : Controller
+{ 
+    public class AuthenticationController : Controller
 	{
+        public static int UserKey;
+
         private AppDbContext appDbContext;
 
         public AuthenticationController(AppDbContext appDbContext)
@@ -19,15 +16,15 @@ namespace playground.Controllers
             this.appDbContext = appDbContext;
         }
 
-        public static int UserKey;
-
         [HttpGet]
+        [Route("Authentication/SignUp")]
         public ViewResult SignUp()
         {
             return View("~/Views/Home/SignUp/SignUp.cshtml");
         }
 
         [HttpPost]
+        [Route("Authentication/SignUp")]
         public ViewResult SignUp(User r)
         {
             if (ModelState.IsValid)
@@ -53,12 +50,14 @@ namespace playground.Controllers
         }
 
         [HttpGet]
+        [Route("Authentication/LogIn")]
         public ViewResult LogIn()
         {
             return View("Views/Home/LogIn/LogIn.cshtml");
         }
 
         [HttpPost]
+        [Route("Authentication/LogIn")]
         public ViewResult LogIn(User r)
         {
             if (ModelState.IsValid)

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using playground.Data;
 using playground.Models;
 
@@ -12,6 +7,8 @@ namespace playground.Controllers
 {
     public class DataController : Controller
     {
+        public static int RepKey;
+
         private AppDbContext appDbContext;
 
         public DataController(AppDbContext appDbContext)
@@ -19,11 +16,8 @@ namespace playground.Controllers
             this.appDbContext = appDbContext;
         }
 
-        public static int RepKey;
-
-        
-
         [HttpGet]
+        [Route("Data/Insertion")]
         public ViewResult Insertion()
         {
             return View("~/Views/Home/AddingData/Insertion.cshtml");

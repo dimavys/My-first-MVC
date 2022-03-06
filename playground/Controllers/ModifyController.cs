@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using playground.Data;
 using playground.Models;
 
@@ -12,8 +7,6 @@ namespace playground.Controllers
 {
 	public class ModifyController : Controller
 	{
-        public static int RepKey = DataController.RepKey;
-
         private AppDbContext appDbContext;
 
         public ModifyController(AppDbContext appDbContext)

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using playground.Data;
 using playground.Models;
 
@@ -12,16 +7,16 @@ namespace playground.Controllers
 {
 	public class RepositoryController : Controller
 	{
+        public static int UserKey = AuthenticationController.UserKey;
+
+        public static int RepKey;
+
         private AppDbContext appDbContext;
 
         public RepositoryController(AppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
         }
-
-        public static int UserKey = AuthenticationController.UserKey;
-
-        public static int RepKey;
 
         [HttpGet]
         [Route("Repository/ListRepository")]
@@ -39,6 +34,7 @@ namespace playground.Controllers
         }
 
         [HttpGet]
+        [Route("Repository/Insertion")]
         public ViewResult Insertion()
         {
             return View("~/Views/Home/Repository/InsertionRep.cshtml");
@@ -75,8 +71,8 @@ namespace playground.Controllers
             return View("~/Views/Home/Repository/DeletedRepository.cshtml");
         }
 
-        [HttpGet]
-        [Route("Repository/Edition")]
+        //[HttpGet]
+        //[Route("Repository/Edition")]
         public ViewResult Edition(int id)
         {
             var temp = appDbContext.Repositories.Where(x => x.Id == id).FirstOrDefault();
