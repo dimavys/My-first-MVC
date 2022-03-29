@@ -63,12 +63,10 @@
                                 Delete
                             </button>
                         </form>
-                        <form id="@r.Id" asp-controller="Modify" asp-action="Edition" method="get">
-                            <input type="hidden" name="id" value="@r.Id" />
-                            <button class="btn btn-primary btn-sm pull-right" style="float:right" type="submit">
-                                Edit
-                            </button>
-                        </form>
+                        <a class="btn btn-primary btn-sm pull-right" style="float:right"
+                           asp-controller="Modify"
+                           asp-action="Edition"
+                           asp-route-id="@r.Id">Edit</a>
                     </td>
                 </tr>
             }

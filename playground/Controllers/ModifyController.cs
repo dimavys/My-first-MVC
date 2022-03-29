@@ -25,7 +25,7 @@ namespace playground.Controllers
         }
 
         [HttpGet]
-        [Route("Modify/Edition")]
+        [Route("Modify/Edition/{id}")]
         public ViewResult Edition(int id)
         {
             var tmp = appDbContext.Tasks.Where(x => x.Id == id).FirstOrDefault();

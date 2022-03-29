@@ -71,8 +71,8 @@ namespace playground.Controllers
             return View("~/Views/Home/Repository/DeletedRepository.cshtml");
         }
 
-        //[HttpGet]
-        //[Route("Repository/Edition")]
+        [HttpGet]
+        [Route("Repository/Edition/{id}")]
         public ViewResult Edition(int id)
         {
             var temp = appDbContext.Repositories.Where(x => x.Id == id).FirstOrDefault();

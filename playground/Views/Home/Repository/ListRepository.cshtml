@@ -59,12 +59,9 @@
                                 Delete
                             </button>
                         </form>
-                        <form id="@r.Id" asp-controller="Repository" asp-action="Edition" method="post">
-                            <input type="hidden" name="id" value="@r.Id" />
-                            <button class="btn btn-primary btn-sm pull-left" style="float:left" type="submit">
-                                Edit
-                            </button>
-                        </form>
+
+                        <a class="btn btn-primary btn-sm pull-left" style="float:left" href="Edition/@r.Id">Edit</a>
+
                         <form id="@r.Id" asp-controller="Data" asp-action="Transfer" method="get">
                             <input type="hidden" name="id" value="@r.Id" />
                             <button class="btn btn-primary btn-sm" style="float:right" type="submit">
