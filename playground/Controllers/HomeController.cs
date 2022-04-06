@@ -18,7 +18,7 @@ namespace playground.Controllers
 
         public ViewResult Index()
         {
-            return View("StartPage");
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }

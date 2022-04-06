@@ -1,28 +1,38 @@
 ﻿<Properties StartupConfiguration="{A28D281C-A081-4117-8ABB-FE904EB4ACEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="playground/Models/ListUsers.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="playground/wwwroot/index.html">
     <Files>
-      <File FileName="playground/Models/ListUsers.cs" Line="1" Column="1" />
+      <File FileName="playground/wwwroot/css/style.css" Line="164" Column="10" />
+      <File FileName="playground/wwwroot/index.html" Line="128" Column="16" />
+      <File FileName="playground/Views/Home/Index.cshtml" Line="85" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="playground" expanded="True">
-            <Node name="playground" expanded="True" selected="True">
+            <Node name="playground" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="ListAdded.cshtml" selected="True" />
+                </Node>
+              </Node>
               <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>
