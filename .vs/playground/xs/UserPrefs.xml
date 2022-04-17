@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{D42235AF-4945-476B-A06D-85D47D3C5BB5}|Default">
+  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="playground/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="docker-compose.override.yml">
     <Files>
       <File FileName="playground/Startup.cs" Line="28" Column="110" />
-      <File FileName="playground/Dockerfile" Line="4" Column="13" />
       <File FileName="docker-compose.override.yml" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -18,8 +20,10 @@
               <Node name="docker-compose.yml" expanded="True" />
             </Node>
             <Node name="playground" expanded="True">
+              <Node name="Dependencies" expanded="True" selected="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="wwwroot" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -29,7 +33,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
