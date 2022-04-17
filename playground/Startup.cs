@@ -25,7 +25,7 @@ namespace playground
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = "server = localhost; user = root; password = Oksan@2003; database = ToDoList;";
+            var connectionString = "server = localhost; user = root; password = Oksan@2003; database = mvc_db;";
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));

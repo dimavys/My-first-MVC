@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  playground:
+    image: ${DOCKER_REGISTRY-}playground
+    build:
+      context: .
+      dockerfile: playground/Dockerfile
+  mvc_db:
+    image: mysql:8.0.28
+    restart: always
+    environment:
+      - MYSQL_DATABASE=mvc_db
+      - MYSQL_ROOT_PASSWORD=Oksan@2003
+    ports:
+      - '3307:3306'
+    volumes:
+      - mvc_db:/var/lib/mysql
+
+volumes:
+    mvc_db:

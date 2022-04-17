@@ -1,29 +1,25 @@
-﻿<Properties StartupConfiguration="{A28D281C-A081-4117-8ABB-FE904EB4ACEB}|Default">
+﻿<Properties StartupConfiguration="{D42235AF-4945-476B-A06D-85D47D3C5BB5}|Default">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="playground/wwwroot/index.html">
+  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="playground/Startup.cs">
     <Files>
-      <File FileName="playground/wwwroot/css/style.css" Line="164" Column="10" />
-      <File FileName="playground/wwwroot/index.html" Line="128" Column="16" />
-      <File FileName="playground/Views/Home/Index.cshtml" Line="85" Column="36" />
+      <File FileName="playground/Startup.cs" Line="28" Column="110" />
+      <File FileName="playground/Dockerfile" Line="4" Column="13" />
+      <File FileName="docker-compose.override.yml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="playground" expanded="True">
+            <Node name="docker-compose" expanded="True">
+              <Node name="docker-compose.yml" expanded="True" />
+            </Node>
             <Node name="playground" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="ListAdded.cshtml" selected="True" />
-                </Node>
-              </Node>
               <Node name="wwwroot" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -33,6 +29,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.playground PreferredExecutionTarget="/Applications/Safari.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
